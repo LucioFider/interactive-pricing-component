@@ -1,34 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <h1>Simple, traffic-based pricing</h1>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Sign-up for our 30-day trial. <br /> No credit required
         </p>
+        <p>Pageviews</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="card">
+        <div className="slider-wrapper">
+          <p>100k Pageviews</p>
+          <div className="range-wrapper">
+            <input type="range" name="pageviews" id="pageviews" />
+          </div>
+          <p>PGK /month</p>
+        </div>
+        <div className="billing-wrapper">
+          <input type="checkbox" name="billingType" id="billingType" />
+          <label htmlFor="billingType">
+            <p>Monthly Billing</p>
+            <div className="fake-checkout"></div>
+            <p>
+              Yearly Billing{" "}
+              <span>
+                25% <span>discount</span>
+              </span>
+            </p>
+          </label>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
